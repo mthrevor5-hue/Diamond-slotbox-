@@ -1,0 +1,272 @@
+/* Leaderboard */
+.leaderboard-modal {
+    max-width: 500px;
+}
+
+.countdown-timer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--secondary-color);
+}
+
+.countdown-timer p {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.leaderboard-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: rgba(255, 0, 255, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+    animation: slideInLeft 0.5s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.rank-badge {
+    font-size: 1.5em;
+    min-width: 40px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.player-info {
+    flex: 1;
+}
+
+.player-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.player-points {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+.reward-badge {
+    background: rgba(255, 215, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* Billing */
+.billing-modal {
+    max-width: 600px;
+}
+
+.billing-content {
+    margin: 20px 0;
+}
+
+.billing-packages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.package {
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.package:hover {
+    background: rgba(0, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+}
+
+.package.premium {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 0, 255, 0.1));
+    border-color: var(--gold);
+}
+
+.package-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.package-name {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.package-price {
+    color: var(--gold);
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.btn-buy {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #000;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-buy:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+}
+
+#billingExit {
+    width: 100%;
+}
+
+/* Settings */
+.settings-modal {
+    max-width: 500px;
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.setting-item {
+    padding: 15px;
+    background: rgba(255, 0, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-item label {
+    font-weight: bold;
+    flex: 1;
+}
+
+.toggle {
+    width: 50px;
+    height: 25px;
+    appearance: none;
+    background: rgba(0, 255, 255, 0.2);
+    border: 2px solid var(--secondary-color);
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s ease;
+}
+
+.toggle:checked {
+    background: var(--secondary-color);
+}
+
+.toggle:checked::before {
+    left: 26px;
+}
+
+#telegramChannel {
+    width: 100%;
+}
+
+.version-text {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+#deleteAccountBtn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Notification Box */
+.notification-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.5);
+    z-index: 400;
+    animation: slideUp 0.5s ease;
+}
+
+.notification-box.hidden {
+    display: none;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.notification-content {
+    text-align: center;
+}
+
+.notification-content p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.notification-time {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+#claimTicketBtn {
+    background: #000;
+    color: var(--secondary-color);
+    border: 2px solid #000;
+}
